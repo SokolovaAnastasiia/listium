@@ -23,5 +23,3 @@ Things you may want to cover:
 
 * ...
 # listium
-
-Тут должен появиться коммит. Тестирую)
