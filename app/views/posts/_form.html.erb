@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -11,27 +18,71 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+  <div class="show-main-screen ">
+      <div class="pic"></div>
+      <div class="post-description">
+          <div class="title">
+              <h2 id='special-title'>Название плейлиста</h2>
+              <%= form.text_field :title %>
+          </div>
+          <div class="tags">
+              <div>Грустные</div>
+              <div>ВШЭ</div>
+          </div>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
-  </div>
+  <div class="show-description">
+      <div class="author-block">
+          <h2>Автор</h2>
+          <div class="name">
+              <div></div>
+              <%= form.text_field :name %>
+          </div>
+      </div>
+      <div class="description-block">
+          <h2>Описание</h2>
+          <%= form.text_area :content %>
+      </div>
+      <div class="mood">
+          <h2>Настроение</h2>
+          <div class="tags">
+              <div style='background-color: #B8D0FF'>Грустные</div>
+              <div style='background-color: #FADBE0'>ВШЭ</div>
+              <div style='background-color: #DCF580'>Для сессии</div>
+          </div>
+      </div>
+      <div class="mood">
+          <h2>Праздники</h2>
+          <div class="tags">
+              <div style='background-color: #A480FE'>Новый год</div>
+              <div style='background-color: #FADBE0'>День рождения</div>
+          </div>
+      </div>
+      <div class="mood">
+          <h2>Настроение</h2>
+          <div class="tags">
+              <div style='background-color: #DCF580'>Грустные</div>
+              <div style='background-color: #B8D0FF'>ВШЭ</div>
+          </div>
+      </div>
+      <div class="mood">
+          <h2>Исполнители</h2>
+          <div class="tags">
+              <div style='background-color: #FADBE0'>The Maneskin</div>
+              <div style='background-color: #FADBE0'>Babymetal</div>
+          </div>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="link-block">
+          <h2>Ссылка на плейлист</h2>
+          <p><%= form.text_field :link %></p>
+      </div>
+      <div class="actions">
+        <%= form.submit "Сохранить" %>
+      </div>
   </div>
 <% end %>
