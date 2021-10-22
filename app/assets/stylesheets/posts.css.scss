@@ -1,0 +1,158 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts-container {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.bin {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 4px;
+    right: 0;
+    background-image: url("bin.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.edit {
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    top: 4px;
+    right: 0;
+    background-image: url("edit.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.posts-container > div {
+    display: flex;
+    width: 340px;
+    margin-bottom: 20px;
+    position: relative;
+    .pic {
+        height: 90px;
+        width: 90px;
+        background-color: orange;
+        border-radius: 15px;
+        margin-right: 10px;
+    }
+    .post-description {
+        display: flex;
+        flex-direction: column;
+    }
+    .title {
+        padding-top: 3px;
+        a {
+            font-size: 18px;
+            font-family: 'Fugue';
+            color: white
+        }
+    }
+    .tags {
+        display: flex;
+        flex-grow: 1;
+        padding-top: 3px;
+        div {
+            background-color: #E5E5E5;
+            display: flex;
+            font-size: 12px;
+            height: 22px;
+            color: black;
+            padding: 0px 8px;
+            align-items: center;
+            font-family: 'Fugue';
+            border-radius: 13px;
+            margin-right: 5px;
+        }
+    }
+    .name {
+        display: flex;
+        margin-bottom: 5px;
+        div {
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 10px;
+        }
+        span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 1px;
+            padding-left: 4px;
+        }
+    }
+}
+
+h2 {
+    font-size: 30px;
+    font-family: "Fugue";
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 233px;
+    background-color: #5920E9;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    padding: 15px;
+    justify-content: space-between;
+    color: #FABBC1;
+    background-image: url("star.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    .main-head {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+    }
+    .main-name {
+        font-family: 'Fugue';
+        font-size: 44px;
+    }
+    .main-author {
+        display: flex;
+        margin-bottom: 5px;
+        div {
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 10px;
+        }
+        span {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 1px;
+            padding-left: 4px;
+        }
+    }
+}
+
+.create_btn {
+    font-size: 20px;
+    font-family: 'Fugue';
+    text-align: center;
+    background-color: #5920E9;
+    border-radius: 20px;
+    width: 126px;
+    margin: 0 auto;
+    a {
+        text-decoration: none;
+        color: #FABBC1;
+    }
+}
