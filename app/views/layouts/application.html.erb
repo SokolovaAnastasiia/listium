@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag    params["controller"], media: 'screen' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <header>
+        <%= image_tag("logo.svg") %>
+        <nav>
+            <%= link_to "Промо", promo_path %>
+            <%= link_to "О нас", about_path %>
+            <%= link_to "Блог", posts_path %>
 
-    <%= yield %>
-    <% if notice %>
-  <%= notice %>
-<% end %>
+        </nav>
+    </header>
+        <%= yield %>
+        <% if notice %>
+            <%= notice %>
+        <% end %>
+    <footer>
+        <p>footer</p>
+    </footer>
   </body>
 </html>

@@ -1,1 +1,59 @@
-<%= link_to "About", about_path %>
+<div class="heading">
+    <span>Listium</span>
+    <p> Медиа-сервис<br>с плейлистами</p>
+</div>
+
+<div class="description"></div>
+
+<div class="find">
+    <span>Находи музыку</span>
+    <p>
+        В ленте рекомендаций ты можешь<br>
+        найти плейлист на любой вкус.<br>
+        Вводи интересующие тебя теги<br>
+        и получай классный результат.
+    </p>
+    <%= image_tag("search.svg") %>
+</div>
+
+<div class="create">
+    <div>
+        <span>Создавай</span>
+        <p>
+            Выкладывай свои плейлисты.<br>
+            Добавляй к ним описание<br>
+            и кастомные теги.<br>
+        </p>
+        <%= image_tag("create.svg") %>
+    </div>
+</div>
+
+<div class="friends">
+    <div>
+        <span>Находи друзей</span>
+        <p>
+            Узнай, что слушают твои друзья.<br>
+            Подпишись на своих знакомых<br>
+            и следи за их активностью.
+        </p>
+    </div>
+</div>
+
+<div class="comment">
+    <div>
+        <span>Комментируй</span>
+        <p>
+            Реагируй на контент. Можно<br>
+            комментировать, а также собирать<br>
+            плейлисты в других музыкальных<br>
+            сервисах.
+        </p>
+    </div>
+
+</div>
+
+
+
+
+<span id='subss' >Подпишись, чтобы не пропустить запуск сервиса:</span>
+<%= render "subscribers/form" %>
