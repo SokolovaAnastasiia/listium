@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'promo/index'
   resources :subscribers
   resources :posts do
-      resources :comments
-      resources :likes
+    resources :comments
+    resources :likes
+    resources :favorites
   end
   get 'post/index'
   get 'welcome/index'
