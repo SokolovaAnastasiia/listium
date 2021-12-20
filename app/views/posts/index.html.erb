@@ -16,7 +16,15 @@
     </div>
 </div>
 
-    <h2>Погрустим?</h2>
+
+<%= link_to 'New Category', new_category_path %>
+
+<h2>All Categories</h2>
+<% Category.all.each do |cat| %>
+	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
+<% end %>
+
+    <!-- <h2>Погрустим?</h2> -->
     <div class="posts-container">
             <% @posts.each do |post| %>
             <div>
@@ -27,6 +35,7 @@
                         <div>Грустные</div>
                         <div>ВШЭ</div>
                     </div>
+                    <td><%= post.category.name %></td>
                     <td>
                     	<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
                     </td>

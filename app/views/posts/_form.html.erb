@@ -42,6 +42,10 @@
               <div></div>
               <%= form.text_field :name %>
           </div>
+          <div class="field">
+                <%= form.label :category_id %>
+                <%= form.select :category_id, Category.pluck(:name, :id) %>
+            </div>
       </div>
       <div class="description-block">
           <div class="field">

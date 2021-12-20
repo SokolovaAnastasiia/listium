@@ -41,6 +41,10 @@
     </div>
     <div class="description-block">
         <p>
+              <strong>Category:</strong>
+              <%= @post.category.name %>
+        </p>
+        <p>
           <strong>Content:</strong>
           <%= @post.content.html_safe %>
         </p>
