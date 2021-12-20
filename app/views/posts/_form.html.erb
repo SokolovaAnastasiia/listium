@@ -44,8 +44,10 @@
           </div>
       </div>
       <div class="description-block">
-          <h2>Описание</h2>
-          <%= form.text_area :content %>
+          <div class="field">
+            <%= form.label :content %>
+            <%= form.cktext_area :content %>
+          </div>
       </div>
       <div class="mood">
           <h2>Настроение</h2>

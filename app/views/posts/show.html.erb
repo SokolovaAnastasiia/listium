@@ -31,8 +31,10 @@
         </div>
     </div>
     <div class="description-block">
-        <h2>Описание</h2>
-        <p><%= @post.content %></p>
+        <p>
+          <strong>Content:</strong>
+          <%= @post.content.html_safe %>
+        </p>
     </div>
     <div class="mood">
         <h2>Настроение</h2>
