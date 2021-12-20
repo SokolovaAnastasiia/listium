@@ -13,6 +13,9 @@
             <div></div>
             <span><%= @post.name %></span>
         </div>
+        <% if user_signed_in? %>
+            <%= link_to 'Edit', edit_post_path(@post) %>
+        <% end %>
         <%= link_to '',  edit_post_path(@post), class: 'edit' %>
         <%= link_to '', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
     </div>
@@ -65,8 +68,16 @@
         <h2>Ссылка на плейлист</h2>
         <p><%= @post.link %></p>
     </div>
+
     <h2>Комментарии:</h2>
     <%= render @post.comments %>
 
+    <% if user_signed_in? %>
     <%= render "comments/form" %>
+    <% else %>
+    <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+    <% end %>
+
+
+    <%# render "comments/form" %>
 </div>
