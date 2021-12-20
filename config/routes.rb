@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :subscribers
   resources :posts do
       resources :comments
+      resources :likes
   end
   get 'post/index'
   get 'welcome/index'

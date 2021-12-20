@@ -22,6 +22,15 @@
 </div>
 
 <div class="show-description">
+
+    <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+    <% if pre_like %>
+      <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <% else %>
+      <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <% end %>
+
     <div class="author-block">
         <h2>Автор</h2>
         <div class="name">
