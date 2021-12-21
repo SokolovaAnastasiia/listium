@@ -1,0 +1,37 @@
+<h1>Панель администрирования</h1>
+
+<div class="">
+  <%= link_to "Публикации", admin_path %>
+  <strong><%= link_to "Комментарии", comments_path %></strong>
+  <%= link_to "Пользователи", users_path %>
+  <%= link_to "Жанры", categories_path %>
+</div>
+
+
+<% @comments.each do |comment| %>
+    <div style='margin-bottom: 100px'>
+        <span>
+            <strong>КОММЕНТАРИЙ</strong>
+        </span>
+        <p>Имя пользователя:_ <%= User.find(comment.user_id).email %> </p>
+        <p>Текст комментария:_<%= comment.body %></p>
+        <p>Айди поста:_<%= comment.post_id %></p>
+        
+        <p>
+            <%= link_to 'Show post', [comment.post, comment],
+                         :confirm => 'Are you sure?',
+                         :method => :show %>
+        </p>
+        <p>
+          <%= link_to 'Destroy Comment', [comment.post, comment],
+                       :confirm => 'Are you sure?',
+                       :method => :delete %>
+        </p>
+
+
+
+
+    </div>
+
+
+<% end %>

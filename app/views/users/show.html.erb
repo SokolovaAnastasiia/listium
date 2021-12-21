@@ -1,5 +1,6 @@
 <% if user_signed_in? && current_user.isadmin == true %>
   <p>Admin <%= @user.isadmin %></p>
+
 <% end %>
 
 <p>ID <%= @user.id %></p>

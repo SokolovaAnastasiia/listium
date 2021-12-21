@@ -27,6 +27,10 @@
       <% else %>
         <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
       <% end %>
+      <% if user_signed_in? && current_user.isadmin == true%>
+        <%= link_to "Панель администрирования", admin_path %>
+      <% end %>
+
     </div>
       <header>
         <%= image_tag("logo.svg") %>

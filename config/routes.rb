@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+  get 'admin', to: 'admin#index'
+
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -27,6 +30,14 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
 
+  get 'posts/:id', to: 'posts#show'
+
+  get 'comments', to: 'comments#index'
+  get 'comments/:id', to: 'comments#show'
+
+
+  root 'posts#index'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'promo#index'
+  # root 'promo#index'
 end
