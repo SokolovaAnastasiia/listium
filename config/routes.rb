@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
+  
+  resources :users, only: [:show, :edit, :update]
 
   get 'posts/:id', to: 'posts#show'
 
