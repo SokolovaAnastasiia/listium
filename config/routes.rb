@@ -30,10 +30,11 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
 
+
   get 'posts/:id', to: 'posts#show'
 
   get 'comments', to: 'comments#index'
-  get 'comments/:id', to: 'comments#show'
+  # get 'comments/:id', to: 'comments#show'
 
 
   root 'posts#index'

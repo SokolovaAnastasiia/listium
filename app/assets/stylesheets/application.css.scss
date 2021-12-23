@@ -1,87 +1,118 @@
-@import 'posts.css.scss';
+
 
 $dark-color: #1C1C1C;
-
-header {
-    display: flex;
-    align-items: center;
-    margin: 0 70px;
-    /* width: 100%; */
-    padding: 0 70px;
-    height: 110px;
-    background-color: #1C1C1C;
-    color: white;
-    img {
-        display: block;
-        height: 35px;
-        margin-right: 90px;
-    }
-    nav {
-        a {
-            color: white;
-            font-size: 22px;
-            margin-right: 120px;
-        }
-    }
-}
+@import 'posts.css.scss';
 
 
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #1C1C1C;
-    color: white;
+    font-family: 'Golos';
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     a {
         text-decoration: none;
-        font-family: "Circe"
+        font-family: "Golos"
     }
 }
 
 
 @font-face {
-   font-family: 'Circe';
-   src: url('Circe.ttf');
+   font-family: 'Golos';
+   font-style: normal;
+   font-weight: normal;
+   src: url('Golos_Text_Regular.ttf');
 }
+
 @font-face {
-   font-family: 'Fugue';
-   src: url('Fugue.otf');
+   font-family: 'Golos-medium';
+   font-style: normal;
+   font-weight: 500;
+   src: url('Golos Text_Medium');
+}
+
+@font-face {
+   font-family: 'Golos-demibold';
+   font-style: normal;
+   font-weight: 600;
+   src: url('Golos Text_DemiBold.ttf');
+}
+
+@font-face {
+   font-family: 'Golos-bold';
+   font-style: normal;
+   font-weight: 700;
+   src: url('Golos Text_Bold.ttf');
+}
+
+@font-face {
+   font-family: 'Golos-black';
+   font-style: normal;
+   font-weight: 900;
+   src: url('Golos Text_Black.ttf');
 }
 
 .top_menu {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 60px;
-  margin-bottom: 40px;
-  background: #eee;
   border-bottom: 1px solid #ddd;
+  .top-menu-links {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    .admin-btn {
+        background-color: #ECF4F9;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+  }
+  .top-menu-nav {
+    display: flex;
+    align-items: center;
+      .logo {
+          background-image: url("logo.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 40px;
+            width: 160px;
+            margin: 0 20px;
+      }
+  }
+  img {
+      float: left;
+  }
 }
 .top_menu a {
   margin: 0 20px;
+  color: black;
+  font-size: 18px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 footer {
-    margin: 0 70px;
-    height: 110px;
-    background-color: #1C1C1C;
-    color: white;
+    padding: 20px 20px;
+    /* height: 110px; */
     display: flex;
-    height: 300px;
     justify-content: space-between;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    border-top: 1px solid #ddd;
     .school {
         display: flex;
         flex-direction: column;
-        font-family: 'Circe';
-        font-size: 24px;
-        color: #FABBC1;
+        font-family: 'Golos';
+        font-size: 18px;
         justify-content: flex-end;
     }
     .soc-media {
-        display: flex;
+        //display: flex;
+        display: none;
         width: 148px;
         justify-content: space-between;
         align-items: flex-end;
@@ -94,7 +125,40 @@ footer {
 
 
 
+//admin page
+.admin-page {
+    display: flex;
+    flex-grow: 1;
+    .admin-nav {
+        flex-basis: 250px;
+        background-color: #ECF4F9;
+        .admin-link {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            height: 70px;
+            .admin-logo {
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 18px;
+                width: 18px;
+                margin-right: 10px;
+            }
+            a {
+                font-size: 18px;
+                color: #60798E;
+                font-family: 'Golos-demibold';
+            }
+            &:hover {
+                background-color: rgba(200, 218, 229, 0.5);
+            }
+        }
 
+    }
+    .admin-content {
+        padding: 20px;
+    }
+}
 
 
 

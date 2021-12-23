@@ -1,19 +1,71 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Email</th>
-      <th>Username</th>
-    </tr>
-  </thead>
+<% if user_signed_in? && current_user.isadmin == true%>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= link_to user.email, user %></td>
-        <td><%= user.username %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="admin-page">
+    <div class="admin-nav">
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/posts.png);'></div>
+                <strong><%= link_to "Публикации", admin_path %></strong>
+            </div>
+            <div class='admin-link' style='background: #C8DAE5;' >
+                <div class='admin-logo' style='background-image: url(../../../assets/users.png);'></div>
+                <%= link_to "Пользователи", users_path %>
+            </div>
+            <div class='admin-link'>
+                <div class='admin-logo' style='background-image: url(../../../assets/genres.png);'></div>
+                <%= link_to "Жанры", categories_path %>
+            </div>
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/collections.png);'></div>
+                <a href="">Подборки</a>
+            </div>
+
+            <div class='admin-link'>
+                <div class='admin-logo' style='background-image: url(../../../assets/comments.png);'></div>
+                <%= link_to "Комментарии", comments_path %>
+            </div>
+    </div>
+    <div class="admin-content">
+        <table>
+          <thead>
+            <tr>
+                <th>ID</th>
+               <th>Пользователь</th>
+              <th>Email</th>
+              <th>Роль</th>
+              <th>Блокировка</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                  <td><%= user.id %></td>
+                <td><%= link_to user.username, user %></td>
+                <td><%= user.email %></td>
+                <td>
+                    <% if user.isadmin == true%>
+                        Администратор
+                    <% else %>
+                        -
+                    <% end %>
+                </td>
+                <td>
+                    <% if user.isblocked == true%>
+                        🞬
+                    <% else %>
+                        -
+                    <% end %>
+                </td>
+                <td>
+                    <%= link_to user.username, user %>
+                    <%= link_to user.username, user %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+</div>
+<% end %>

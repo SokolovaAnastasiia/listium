@@ -1,0 +1,41 @@
+<p>
+    Тут будет редактироваине юзера
+</p>
+
+
+      <%= form_with model: @user, local: true, html: {class: "form-edit-user"} do |f| %>
+
+
+
+      <p class="username"><%=@user.username %></p>
+        
+
+      <div class="field">
+          <%= f.label :username %>
+            <%= f.text_field :username %>
+      </div>
+
+      <div class="field">
+          <%= f.label :email %>
+            <%= f.text_field :email %>
+      </div>
+
+      <div class="field">
+        <%# f.label :username %>
+      </div>
+
+      <div class="field">
+        <%= f.label :isadmin %>
+        <%= f.check_box :isadmin %>
+      </div>
+
+      <div class="field">
+          <%= f.label :isblocked %>
+          <%= f.check_box :isblocked %>
+      </div>
+
+      <%= f.submit "Submit" %>
+
+<% end %>
+
+<%= link_to 'Back', users_path %>
