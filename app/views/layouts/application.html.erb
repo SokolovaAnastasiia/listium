@@ -22,14 +22,17 @@
             </div>
 
             <nav>
-                <%= link_to "Промо", promo_path %>
-                <%= link_to "О нас", about_path %>
+                <%# link_to "Промо", promo_path %>
+                <%# link_to "О нас", about_path %>
+                <a href="">Лендинг</a>
+                <a href="https://dimchenskiy.github.io/StyleGuide/" target="_blank">Стайлгайд</a>
                 <%= link_to "Рекомендации", posts_path %>
 
             </nav>
+
         </div>
 
-
+        <%= react_component 'Tests' %>
         <div class="top-menu-links">
             <% Category.where(display_in_navbar: true).each do |cat| %>
               <%= link_to cat.name, posts_path(category: cat.name) %>
@@ -57,9 +60,6 @@
       <% end %>
 
         <%= yield %>
-        <% if notice %>
-            <%= notice %>
-        <% end %>
     <footer>
         <div class="school">
             <span>@2021</span>

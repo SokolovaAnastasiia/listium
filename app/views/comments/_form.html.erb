@@ -1,7 +1,4 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
-	<div class="field">
-		<%= current_user.email %>
-	</div>
 	<div class="field comment1">
 		Введите комментарий
 		<%= f.text_area :body %>

@@ -2,9 +2,20 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
+  # def index
+  #   @users = User.all
+  # end
+
   def index
     @users = User.all
+    render component: 'Users', props: { users: @users }
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => @users }
+    end
   end
+
+
 
   def edit
   end
@@ -14,8 +25,9 @@ class UsersController < ApplicationController
     # redirect_to current_user
     respond_to do |format|
       if @user.update(user_params)
-         format.html { redirect_to @user, notice: 'The user info was successfully updated' }
+         format.html { redirect_to users_path, notice: 'The user info was successfully updated' }
          format.json { render :show, status: :ok, location: @user }
+
       else
          format.html { render :new, status: :unprocessable_entity }
          format.json { render json: @user.errors, status: :unprocessable_entity }

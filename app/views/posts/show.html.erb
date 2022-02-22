@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 
 <div class="show-main-screen ">
@@ -11,48 +11,45 @@
         </div>
         <div class="name">
             <div></div>
-            <span><%= @post.name %></span>
+            <span><%= link_to User.find(@post.user_id).username, User.find(@post.user_id) %></span>
         </div>
-        <% if user_signed_in? %>
-            <%= link_to 'Edit', edit_post_path(@post) %>
+        <% if (user_signed_in? && current_user.isadmin == true)%>
+            <%= link_to '',  edit_post_path(@post), class: 'edit' %>
+            <%= link_to '', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
         <% end %>
-        <%= link_to '',  edit_post_path(@post), class: 'edit' %>
-        <%= link_to '', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
+
+
     </div>
 </div>
 
 <div class="show-description">
 
-    <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-    <% if pre_like %>
-      <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <div class='likes'>
+        <span><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? '' : ''%></span>
+        <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+        <% if pre_like %>
+          <%= button_to '', post_like_path(@post, pre_like), method: :delete, class: 'dislike' %>
+        <% else %>
+          <%= button_to '', post_likes_path(@post), method: :post, class: 'like' %>
+        <% end %>
+
+        <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
+    <% if pre_favorite %>
+        <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete, class: 'favourite' %>
     <% else %>
-      <%= button_to 'Like', post_likes_path(@post), method: :post %>
+        <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post, class: 'favorite' %>
     <% end %>
-
-    <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-<% if pre_favorite %>
-    <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
-<% else %>
-    <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
-<% end %>
-
-    <div class="author-block">
-        <h2>Автор</h2>
-        <div class="name">
-            <div></div>
-            <span><%= @post.name %></span>
-            <a href="#">Подписаться</a>
-        </div>
     </div>
+
+
+
     <div class="description-block">
         <p>
-              <strong>Category:</strong>
+              <strong>Жанр:</strong>
               <%= @post.category.name %>
         </p>
         <p>
-          <strong>Content:</strong>
+          <strong>Описание:</strong>
           <%= @post.content.html_safe %>
         </p>
     </div>

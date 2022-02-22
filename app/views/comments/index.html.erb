@@ -1,35 +1,59 @@
-<h1>Панель администрирования</h1>
+<div class="admin-page">
+    <div class="admin-nav">
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/posts.png);'></div>
+                <strong><%= link_to "Публикации", admin_path %></strong>
+            </div>
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/users.png);'></div>
+                <%= link_to "Пользователи", users_path %>
+            </div>
+            <div class='admin-link'>
+                <div class='admin-logo' style='background-image: url(../../../assets/genres.png);'></div>
+                <%= link_to "Жанры", categories_path %>
+            </div>
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/collections.png);'></div>
+                <a href="">Подборки</a>
+            </div>
 
-<div class="">
-  <%= link_to "Публикации", admin_path %>
-  <strong><%= link_to "Комментарии", comments_path %></strong>
-  <%= link_to "Пользователи", users_path %>
-  <%= link_to "Жанры", categories_path %>
-</div>
-
-
-<% @comments.each do |comment| %>
-    <div style='margin-bottom: 100px'>
-        <span>
-            <strong>КОММЕНТАРИЙ</strong>
-        </span>
-        <p>Имя пользователя:_ <%= User.find(comment.user_id).email %> </p>
-        <p>Текст комментария:_<%= comment.body %></p>
-        <p>Айди поста:_<%= comment.post_id %></p>
-
-        <p>
-            <%= link_to 'Show post', [comment.post, comment] %>
-        </p>
-        <p>
-          <%= link_to 'Destroy Comment', [comment.post, comment],
-                       :confirm => 'Are you sure?',
-                       :method => :delete %>
-        </p>
-
-
-
-
+            <div class='admin-link'  style='background: #C8DAE5;'>
+                <div class='admin-logo' style='background-image: url(../../../assets/comments.png);'></div>
+                <%= link_to "Комментарии", comments_path %>
+            </div>
     </div>
+    <div class="admin-content">
+        <form class='search-form'>
+           <p><input type="search" name="q" placeholder="🔍 Введите автора комментария"></p>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>Автор</th>
+              <th>Текст</th>
+              <th>Пост</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
 
+        <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+          <tbody>
+            <% @comments.each do |comment| %>
+              <tr>
+                <td><%= link_to User.find(comment.user_id).username, User.find(comment.user_id) %></td>
+                <td style='max-width: 200px'><%= comment.body %></td>
+                <td><%= link_to Post.find(comment.post_id).title, [comment.post, comment] %></td>
+                <td>
+                    <span class='delete'>
+                        <%= link_to 'Удалить', [comment.post, comment],
+                                     :confirm => 'Are you sure?',
+                                     :method => :delete %>
+                    </span>
 
-<% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+</div>

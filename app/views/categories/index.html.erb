@@ -1,31 +1,65 @@
-<p id="notice"><%= notice %></p>
+<div class="admin-page">
+    <div class="admin-nav">
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/posts.png);'></div>
+                <strong><%= link_to "Публикации", admin_path %></strong>
+            </div>
+            <div class='admin-link'>
+                <div class='admin-logo' style='background-image: url(../../../assets/users.png);'></div>
+                <%= link_to "Пользователи", users_path %>
+            </div>
+            <div class='admin-link' style='background: #C8DAE5;' >
+                <div class='admin-logo' style='background-image: url(../../../assets/genres.png);'></div>
+                <%= link_to "Жанры", categories_path %>
+            </div>
+            <div class='admin-link' >
+                <div class='admin-logo' style='background-image: url(../../../assets/collections.png);'></div>
+                <a href="">Подборки</a>
+            </div>
 
-<h1>Categories</h1>
+            <div class='admin-link'>
+                <div class='admin-logo' style='background-image: url(../../../assets/comments.png);'></div>
+                <%= link_to "Комментарии", comments_path %>
+            </div>
+    </div>
+    <div class="admin-content">
+        <form class='search-form'>
+           <p><input type="search" name="q" placeholder="🔍 Введите название жанра"></p>
+        </form>
+        <span class='create-new-btn'><%= link_to 'Добавить жанр', new_category_path %></span>
+        <table>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Описание</th>
+              <th>Отображение</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Display in navbar</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td><%= category.name %></td>
+                <td><%= category.description %></td>
+                <td>
+                    <% if category.display_in_navbar == true%>
+                        ✓
+                    <% else %>
+                        ⨯
+                    <% end %>
+                </td>
+                <td>
+                    <span><%= link_to 'Изменить', edit_category_path(category) %></span>
+                    <span class='delete'>
+                        <%= link_to 'Удалить', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </span>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.description %></td>
-        <td><%= category.display_in_navbar %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                </td>
 
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+</div>

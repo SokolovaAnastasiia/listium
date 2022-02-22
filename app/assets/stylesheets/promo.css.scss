@@ -1,182 +1,182 @@
 
 
 
-
-
-
-
-.heading {
-    height: 690px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    padding: 150px;
-    width: 1440px;
-    background-image: url("promo_listium_bg.png");
-    background-repeat: no-repeat;
-    background-position: center right;
-    span {
-        font-family: 'Fugue';
-        font-size: 120px;
-        display: block;
-    }
-    p {
-        font-family: 'Circe';
-        font-size: 36px;
-        margin: 0;
-        line-height: 40px;
-    }
-}
-
-.description {
-    height: 690px;
-    width: 1440px;
-    background-image: url("description.svg");
-    background-repeat: no-repeat;
-    background-position: center right 20%;
-}
-
-.find {
-    height: 690px;
-    box-sizing: border-box;
-    margin: 200px auto 0;
-    padding: 150px;
-    width: 1440px;
-    background-image: url("find_bg.png");
-    background-repeat: no-repeat;
-    background-position: center right 10%;
-    span {
-        font-family: 'Fugue';
-        font-size: 70px;
-        display: block;
-    }
-    p {
-        font-family: 'Circe';
-        font-size: 36px;
-        margin: 0;
-        line-height: 40px;
-        margin-top: 25px;
-    }
-    img {
-        margin-top: 20px;
-    }
-}
-
-
-.create {
-    height: 690px;
-    box-sizing: border-box;
-    margin: 0px 132px 0 0px;
-    padding: 150px 0;
-    width: 1440px;
-    background-image: url("create_mockup.png");
-    background-repeat: no-repeat;
-    background-position: center left -72%;
-    div {
-        float: right;
-        span {
-            font-family: 'Fugue';
-            font-size: 70px;
-            display: block;
-        }
-        p {
-            font-family: 'Circe';
-            font-size: 36px;
-            margin: 0;
-            line-height: 40px;
-            margin-top: 25px;
-        }
-        img {
-            margin-top: 20px;
-        }
-    }
-}
-
-.friends {
-    height: 690px;
-    box-sizing: border-box;
-    margin: 200px auto 0;
-    margin-right: 0;
-    margin-left: 100px;
-    padding-right: 0;
-    padding: 150px;
-    background-image: url("frieds_bg.png");
-    background-repeat: no-repeat;
-    background-position: center right -5%;
-    span {
-        font-family: 'Fugue';
-        font-size: 70px;
-        display: block;
-    }
-    p {
-        font-family: 'Circe';
-        font-size: 36px;
-        margin: 0;
-        line-height: 40px;
-        margin-top: 25px;
-    }
-}
-
-
-
-.comment {
-    height: 690px;
-    box-sizing: border-box;
-    margin: 200px auto 0;
-    padding: 150px;
-    width: 1440px;
-    background-image: url("comment.png");
-    background-repeat: no-repeat;
-    background-position: center left 10%;
-    div {
-        float: right;
-        span {
-            font-family: 'Fugue';
-            font-size: 70px;
-            display: block;
-        }
-        p {
-            font-family: 'Circe';
-            font-size: 36px;
-            margin: 0;
-            line-height: 40px;
-            margin-top: 25px;
-        }
-    }
-}
-
-#subss {
-    font-family: 'Fugue';
-    font-size: 36px;
-    display: block;
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 50px;
-}
-
-.new_subscriber {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.sub__input {
-    padding: 5px 31px;
-    border: white 3px solid;
-    width: 454px;
-    border-radius: 32px;
-    background-color: #1C1C1C;
-    height: 32px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.sub__btn {
-    color: white;
-    background-color: #5920E9;
-    padding: 5px 31px;
-    border: white 3px solid;
-    width: 524px;
-    border-radius: 32px;
-    height: 45px;
-}
+//
+//
+//
+//
+// .heading {
+//     height: 690px;
+//     box-sizing: border-box;
+//     margin: 0 auto;
+//     padding: 150px;
+//     width: 1440px;
+//     background-image: url("promo_listium_bg.png");
+//     background-repeat: no-repeat;
+//     background-position: center right;
+//     span {
+//         font-family: 'Fugue';
+//         font-size: 120px;
+//         display: block;
+//     }
+//     p {
+//         font-family: 'Circe';
+//         font-size: 36px;
+//         margin: 0;
+//         line-height: 40px;
+//     }
+// }
+//
+// .description {
+//     height: 690px;
+//     width: 1440px;
+//     background-image: url("description.svg");
+//     background-repeat: no-repeat;
+//     background-position: center right 20%;
+// }
+//
+// .find {
+//     height: 690px;
+//     box-sizing: border-box;
+//     margin: 200px auto 0;
+//     padding: 150px;
+//     width: 1440px;
+//     background-image: url("find_bg.png");
+//     background-repeat: no-repeat;
+//     background-position: center right 10%;
+//     span {
+//         font-family: 'Fugue';
+//         font-size: 70px;
+//         display: block;
+//     }
+//     p {
+//         font-family: 'Circe';
+//         font-size: 36px;
+//         margin: 0;
+//         line-height: 40px;
+//         margin-top: 25px;
+//     }
+//     img {
+//         margin-top: 20px;
+//     }
+// }
+//
+//
+// .create {
+//     height: 690px;
+//     box-sizing: border-box;
+//     margin: 0px 132px 0 0px;
+//     padding: 150px 0;
+//     width: 1440px;
+//     background-image: url("create_mockup.png");
+//     background-repeat: no-repeat;
+//     background-position: center left -72%;
+//     div {
+//         float: right;
+//         span {
+//             font-family: 'Fugue';
+//             font-size: 70px;
+//             display: block;
+//         }
+//         p {
+//             font-family: 'Circe';
+//             font-size: 36px;
+//             margin: 0;
+//             line-height: 40px;
+//             margin-top: 25px;
+//         }
+//         img {
+//             margin-top: 20px;
+//         }
+//     }
+// }
+//
+// .friends {
+//     height: 690px;
+//     box-sizing: border-box;
+//     margin: 200px auto 0;
+//     margin-right: 0;
+//     margin-left: 100px;
+//     padding-right: 0;
+//     padding: 150px;
+//     background-image: url("frieds_bg.png");
+//     background-repeat: no-repeat;
+//     background-position: center right -5%;
+//     span {
+//         font-family: 'Fugue';
+//         font-size: 70px;
+//         display: block;
+//     }
+//     p {
+//         font-family: 'Circe';
+//         font-size: 36px;
+//         margin: 0;
+//         line-height: 40px;
+//         margin-top: 25px;
+//     }
+// }
+//
+//
+//
+// .comment {
+//     height: 690px;
+//     box-sizing: border-box;
+//     margin: 200px auto 0;
+//     padding: 150px;
+//     width: 1440px;
+//     background-image: url("comment.png");
+//     background-repeat: no-repeat;
+//     background-position: center left 10%;
+//     div {
+//         float: right;
+//         span {
+//             font-family: 'Fugue';
+//             font-size: 70px;
+//             display: block;
+//         }
+//         p {
+//             font-family: 'Circe';
+//             font-size: 36px;
+//             margin: 0;
+//             line-height: 40px;
+//             margin-top: 25px;
+//         }
+//     }
+// }
+//
+// #subss {
+//     font-family: 'Fugue';
+//     font-size: 36px;
+//     display: block;
+//     text-align: center;
+//     margin-top: 150px;
+//     margin-bottom: 50px;
+// }
+//
+// .new_subscriber {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }
+//
+//
+// .sub__input {
+//     padding: 5px 31px;
+//     border: white 3px solid;
+//     width: 454px;
+//     border-radius: 32px;
+//     background-color: #1C1C1C;
+//     height: 32px;
+//     margin-bottom: 20px;
+//     color: white;
+// }
+//
+// .sub__btn {
+//     color: white;
+//     background-color: #5920E9;
+//     padding: 5px 31px;
+//     border: white 3px solid;
+//     width: 524px;
+//     border-radius: 32px;
+//     height: 45px;
+// }

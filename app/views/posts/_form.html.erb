@@ -2,7 +2,7 @@
 
 
 
-
+<h2>Плейлист</h2>
 
 
 <%= form_with(model: post) do |form| %>
@@ -40,7 +40,7 @@
           <h2>Автор</h2>
           <div class="name">
               <div></div>
-              <%= form.text_field :name %>
+              <%= form.text_field :name, required: true, class: 'form-control', value:current_user.username  %>
           </div>
           <div class="field">
                 <%= form.label :category_id %>

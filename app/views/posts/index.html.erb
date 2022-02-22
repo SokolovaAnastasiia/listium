@@ -1,61 +1,56 @@
 
-
-<p id="notice"><%= notice %></p>
-
-
-
-<div class="main">
-    <span class="main-head">Статья</span>
-    <span class="main-name">
-        Как связаны клипы<br>
-        Моргенштерна?
-    </span>
-    <div class="main-author">
-        <div></div>
-        <span>Дима Головкин</span>
+<div class="stretch alone-form">
+    <div class="main">
+        <span class="main-head">Статья</span>
+        <span class="main-name">
+            Как связаны клипы<br>
+            Моргенштерна?
+        </span>
+        <div class="main-author">
+            <div></div>
+            <span>Дима Головкин</span>
+        </div>
     </div>
-</div>
+
+    <div style='width: 700px; margin: 20px auto;'>
+        <span><%= link_to 'Все', posts_path() %></span>
+        <% Category.all.each do |cat| %>
+        	| <span><%= link_to cat.name, posts_path(category: cat.name) %></span>
+        <% end %>
+    </div>
 
 
-<%= link_to 'New Category', new_category_path %>
-
-<h2>All Categories</h2>
-<% Category.all.each do |cat| %>
-	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
-<% end %>
-
-    <!-- <h2>Погрустим?</h2> -->
-    <div class="posts-container">
-            <% @posts.each do |post| %>
-            <div>
-                <div class="pic"></div>
-                <div class="post-description">
-                    <div class="title"><%= link_to post.title, post %></div>
-                    <div class="tags">
-                        <div>Грустные</div>
-                        <div>ВШЭ</div>
+        <!-- <h2>Погрустим?</h2> -->
+        <div class="posts-container">
+                <% @posts.each do |post| %>
+                <div>
+                    <div class="pic"></div>
+                    <div class="post-description">
+                        <div class="title"><%= link_to post.title, post %></div>
+                        <div class="tags">
+                            <div><%= post.category.name %></div>
+                        </div>
+                        <td>
+                        	<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
+                        </td>
+                        <td>
+                        	<%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%>
+                        </td>
+                        <div class="name">
+                            <div></div>
+                            <span><%= post.name %></span>
+                        </div>
                     </div>
-                    <td><%= post.category.name %></td>
-                    <td>
-                    	<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-                    </td>
-                    <td>
-                    	<%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%>
-                    </td>
-                    <div class="name">
-                        <div></div>
-                        <span><%= post.name %></span>
-                    </div>
+                    <%= link_to '', edit_post_path(post), class: 'edit' %>
+                    <%= link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
                 </div>
-                <%= link_to '', edit_post_path(post), class: 'edit' %>
-                <%= link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
-            </div>
-            <% end %>
+                <% end %>
+        </div>
+
+
+    <br>
+
+    <div class="create_btn">
+        <%= link_to 'Создать +', new_post_path %>
     </div>
-
-
-<br>
-
-<div class="create_btn">
-    <%= link_to 'Создать +', new_post_path %>
 </div>

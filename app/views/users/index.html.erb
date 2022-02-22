@@ -26,6 +26,10 @@
             </div>
     </div>
     <div class="admin-content">
+        <form class='search-form'>
+           <p><input type="search" name="q" placeholder="🔍 Введите ник пользователя"></p>
+           <!-- <input type="submit" value="Найти"> -->
+        </form>
         <table>
           <thead>
             <tr>
@@ -41,7 +45,7 @@
           <tbody>
             <% @users.each do |user| %>
               <tr>
-                  <td><%= user.id %></td>
+                <td><%= user.id %></td>
                 <td><%= link_to user.username, user %></td>
                 <td><%= user.email %></td>
                 <td>
@@ -53,14 +57,14 @@
                 </td>
                 <td>
                     <% if user.isblocked == true%>
-                        🞬
+                        <span style='color: #EE754A'>🞬</span>
                     <% else %>
                         -
                     <% end %>
                 </td>
                 <td>
-                    <%= link_to user.username, user %>
-                    <%= link_to user.username, user %>
+                    <span><%= link_to 'Редактировать', edit_user_path(user) %></span>
+
                 </td>
               </tr>
             <% end %>

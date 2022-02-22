@@ -1,128 +1,128 @@
 // Place all the styles related to the About controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.container {
-    width: 1290px;
-    margin: 0 auto;
-    h2 {
-        font-family: 'Fugue';
-        font-size: 70px;
-        margin-bottom: 140px;
-    }
-    h3 {
-        font-family: 'Fugue';
-        font-size: 48px;
-        margin-bottom: 125px;
-    }
-    p {
-        font-family: 'Circe';
-        font-size: 36px;
-    }
-}
-
-.concept {
-    height: 1020px;
-    background-image: url("squares.png");
-    background-repeat: no-repeat;
-    background-position: right top;
-    h2 {
-        padding-top: 170px;
-    }
-    span {
-        color: #8859FF;
-    }
-}
-
-.search {
-    position: relative;
-    .hypo {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        div {
-            flex-basis: 45%;
-            height: 670px;
-            display: flex;
-            flex-direction: column;
-            img {
-                margin: 0 auto;
-            }
-        }
-    }
-    h3 {
-        margin-top: 50px;
-    }
-}
-
-.problems {
-    position: relative;
-    div {
-        display: flex;
-        height: 250px;
-        p {
-            flex-basis: 60%;
-            margin-top: 0;
-        }
-        img {
-            width: 145px;
-            height: 145px;
-        }
-    }
-}
-
-.mechamics {
-    height: 883px;
-    background-image: url('mecha.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-
-}
-
-.ca {
-    position: relative;
-    p {
-        display: inline;
-        margin-left: 10px;
-    }
-    .guys {
-        margin-top: 20px;
-        display: flex;
-        .small {
-            font-size: 24px;
-        }
-        div {
-            display: flex;
-            flex-basis: 50%;
-            flex-direction: column;
-            img {
-                width: 50%;
-            }
-            p {
-                margin-bottom: 0
-            }
-        }
-    }
-}
-
-.students {
-    h2 {
-        margin-top: 200px;
-    }
-}
-
-
-.guys {
-    margin-top: 20px;
-    display: flex;
-    div {
-        display: flex;
-        flex-basis: 50%;
-        flex-direction: column;
-        img {
-            width: 50%;
-        }
-        p {
-            margin-bottom: 0
-        }
-    }
-}
+// .container {
+//     width: 1290px;
+//     margin: 0 auto;
+//     h2 {
+//         font-family: 'Fugue';
+//         font-size: 70px;
+//         margin-bottom: 140px;
+//     }
+//     h3 {
+//         font-family: 'Fugue';
+//         font-size: 48px;
+//         margin-bottom: 125px;
+//     }
+//     p {
+//         font-family: 'Circe';
+//         font-size: 36px;
+//     }
+// }
+//
+// .concept {
+//     height: 1020px;
+//     background-image: url("squares.png");
+//     background-repeat: no-repeat;
+//     background-position: right top;
+//     h2 {
+//         padding-top: 170px;
+//     }
+//     span {
+//         color: #8859FF;
+//     }
+// }
+//
+// .search {
+//     position: relative;
+//     .hypo {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+//         div {
+//             flex-basis: 45%;
+//             height: 670px;
+//             display: flex;
+//             flex-direction: column;
+//             img {
+//                 margin: 0 auto;
+//             }
+//         }
+//     }
+//     h3 {
+//         margin-top: 50px;
+//     }
+// }
+//
+// .problems {
+//     position: relative;
+//     div {
+//         display: flex;
+//         height: 250px;
+//         p {
+//             flex-basis: 60%;
+//             margin-top: 0;
+//         }
+//         img {
+//             width: 145px;
+//             height: 145px;
+//         }
+//     }
+// }
+//
+// .mechamics {
+//     height: 883px;
+//     background-image: url('mecha.svg');
+//     background-repeat: no-repeat;
+//     background-position: center;
+//
+// }
+//
+// .ca {
+//     position: relative;
+//     p {
+//         display: inline;
+//         margin-left: 10px;
+//     }
+//     .guys {
+//         margin-top: 20px;
+//         display: flex;
+//         .small {
+//             font-size: 24px;
+//         }
+//         div {
+//             display: flex;
+//             flex-basis: 50%;
+//             flex-direction: column;
+//             img {
+//                 width: 50%;
+//             }
+//             p {
+//                 margin-bottom: 0
+//             }
+//         }
+//     }
+// }
+//
+// .students {
+//     h2 {
+//         margin-top: 200px;
+//     }
+// }
+//
+//
+// .guys {
+//     margin-top: 20px;
+//     display: flex;
+//     div {
+//         display: flex;
+//         flex-basis: 50%;
+//         flex-direction: column;
+//         img {
+//             width: 50%;
+//         }
+//         p {
+//             margin-bottom: 0
+//         }
+//     }
+// }

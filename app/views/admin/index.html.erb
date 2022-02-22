@@ -25,15 +25,26 @@
             </div>
     </div>
     <div class="admin-content">
-        <table style='margin-bottom: 100px'>
+        <form class='search-form'>
+           <p><input type="search" name="q" placeholder="🔍 Введите название плейлиста"></p>
+           <!-- <input type="submit" value="Найти"> -->
+        </form>
+        <div class='filter'>
+            <span><%= link_to 'Все', admin_path() %></span>
+            <% Category.all.each do |cat| %> |
+            	<span><%= link_to cat.name, admin_path(category: cat.name) %></span>
+            <% end %>
+        </div>
+
+        <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Title</th>
-              <!-- <th>Content</th> -->
-              <th>Category</th>
-              <th colspan="3"></th>
+              <th>ID</th>
+              <th>Автор</th>
+              <th>Название</th>
+              <th>Жанр</th>
+              <th>Активность</th>
+              <th>Действия</th>
             </tr>
           </thead>
 
@@ -42,16 +53,21 @@
             <% @posts.each do |post| %>
               <tr>
                 <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-                <td><%# post.image %></td>
-                <td><%= post.name %></td>
-                <td><%= post.title %></td>
-                <td><%= post.category.name %></td>
-                <td><%#= post.content.html_safe %></td>
-                <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
-                <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
-                <td><%= link_to 'show', post %></td>
-                <td><%= link_to 'edit', edit_post_path(post) %></td>
-                <td><%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= post.id %></td>
+                <td><%= link_to User.find(post.user_id).username, User.find(post.user_id) %></td>
+                <td><%= link_to post.title, post %></td>
+                <td><%= link_to post.category.name, post.category %></td>
+                <td>
+                    <%= post.likes.count %> <%= (post.likes.count) == 1 ? '👍' : '👍'%>
+                    <%= post.comments.count %> <%= (post.comments.count) == 1 ? '💬' : '💬'%>
+                </td>
+                <td>
+                    <span><%= link_to 'Изменить', edit_post_path(post) %></span>
+                    <span class='delete'>
+                        <%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </span>
+
+                </td>
               </tr>
             <% end %>
           </tbody>
