@@ -14,50 +14,17 @@
   </head>
 
   <body>
+    <%= react_component 'O_Header', { current_user:  current_user, auth: user_signed_in?}%>
 
-      <div class="top_menu">
-        <div class="top-menu-nav">
-            <div class="logo"'>
-                <%# image_tag("logo.svg") %>
-            </div>
 
-            <nav>
-                <%# link_to "Промо", promo_path %>
-                <%# link_to "О нас", about_path %>
-                <a href="">Лендинг</a>
-                <a href="https://dimchenskiy.github.io/StyleGuide/" target="_blank">Стайлгайд</a>
-                <%= link_to "Рекомендации", posts_path %>
 
-            </nav>
-
-        </div>
-
-        <%= react_component 'Tests' %>
-        <div class="top-menu-links">
-            <% Category.where(display_in_navbar: true).each do |cat| %>
-              <%= link_to cat.name, posts_path(category: cat.name) %>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to 'Аккаунт', current_user %> |
-            <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-          <% else %>
-            <%= link_to 'Войти', new_user_session_path %> |
-            <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-          <% end %>
-
-          <% if user_signed_in? && current_user.isadmin == true%>
-              <div class="admin-btn">
-                  <%= link_to "Панель управления", admin_path %>
-              </div>
-          <% end %>
-        </div>
-      </div>
 
       <% if notice %>
         <p class="notice"><%= notice %></p>
       <% elsif alert %>
         <p class="alert"><%= alert %></p>
       <% end %>
+
 
         <%= yield %>
     <footer>

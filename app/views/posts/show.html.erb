@@ -24,22 +24,7 @@
 
 <div class="show-description">
 
-    <div class='likes'>
-        <span><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? '' : ''%></span>
-        <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-        <% if pre_like %>
-          <%= button_to '', post_like_path(@post, pre_like), method: :delete, class: 'dislike' %>
-        <% else %>
-          <%= button_to '', post_likes_path(@post), method: :post, class: 'like' %>
-        <% end %>
 
-        <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-    <% if pre_favorite %>
-        <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete, class: 'favourite' %>
-    <% else %>
-        <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post, class: 'favorite' %>
-    <% end %>
-    </div>
 
 
 

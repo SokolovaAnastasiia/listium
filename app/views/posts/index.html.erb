@@ -1,4 +1,12 @@
 
+
+<div class="posts_container">
+  <% @posts.each do |post| %>
+  <%= react_component 'M_Post', { title: post.title, post: post}%>
+  <% end %>
+</div>
+
+
 <div class="stretch alone-form">
     <div class="main">
         <span class="main-head">Статья</span>
@@ -20,32 +28,10 @@
     </div>
 
 
-        <!-- <h2>Погрустим?</h2> -->
-        <div class="posts-container">
-                <% @posts.each do |post| %>
-                <div>
-                    <div class="pic"></div>
-                    <div class="post-description">
-                        <div class="title"><%= link_to post.title, post %></div>
-                        <div class="tags">
-                            <div><%= post.category.name %></div>
-                        </div>
-                        <td>
-                        	<%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-                        </td>
-                        <td>
-                        	<%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%>
-                        </td>
-                        <div class="name">
-                            <div></div>
-                            <span><%= post.name %></span>
-                        </div>
-                    </div>
-                    <%= link_to '', edit_post_path(post), class: 'edit' %>
-                    <%= link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
-                </div>
-                <% end %>
-        </div>
+
+
+
+
 
 
     <br>

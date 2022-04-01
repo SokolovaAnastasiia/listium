@@ -18,6 +18,12 @@
                 <p><span>Администратор</span></p>
               <% end %>
             <% end %>
+            <% if user_signed_in? && current_user.isadmin == true%>
+                <div class="admin-btn">
+                    <%= link_to "Панель управления", admin_path %>
+                </div>
+            <% end %>
+            <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
 
             <% if (user_signed_in? && @user.id == current_user.id)  %>
                 <div class="btn">

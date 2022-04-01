@@ -2,18 +2,18 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
-  # def index
-  #   @users = User.all
-  # end
-
   def index
     @users = User.all
-    render component: 'Users', props: { users: @users }
-    respond_to do |format|
-      format.html  # index.html.erb
-      format.json  { render :json => @users }
-    end
   end
+
+  # def index
+  #   @users = User.all
+  #   render component: 'Users', props: { users: @users }
+  #   respond_to do |format|
+  #     format.html  # index.html.erb
+  #     format.json  { render :json => @users }
+  #   end
+  # end
 
 
 

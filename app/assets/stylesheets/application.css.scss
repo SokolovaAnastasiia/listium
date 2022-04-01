@@ -1,10 +1,10 @@
 
 
-$dark-color: #1C1C1C;
-$light-blue: #ECF4F9;
-$dark-blue: #60798E;
+
+
 
 @import 'posts.css.scss';
+
 
 
 html, body {
@@ -56,13 +56,394 @@ html, body {
    src: url('Golos Text_Black.ttf');
 }
 
+
+@mixin H1 {
+    font-family: Golos;
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 82px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+@mixin H2 {
+    font-family: Golos;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+}
+
+@mixin H3 {
+    font-family: Golos;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+}
+
+@mixin Text {
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+@mixin Secondary_text {
+    font-family: Golos;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+}
+
+@mixin Tags {
+    font-family: Golos;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0em;
+}
+
+
+
+$dark-color: #1C1C1C;
+$light-blue: #ECF4F9;
+$dark-blue: #60798E;
+
+// базовые цвета
+$black-listium: #1C1C1C;
+$white-listium: #FFFFFF;
+
+// основные цвета
+$violet-listium: #5920E9;
+$pink-listium: #FABBC1;
+$yellow-listium: #EBC068;
+$green-listium: #71DA5B;
+$orange-listium: #EE754A;
+$blue-listium: #AAB6FF;
+
+// цвета состояний
+$violet-listium-dark: #3A266F;
+$error-listium: #F26F6F;
+
+// доп цвета
+$background-gray-listium: #FAFAFA;
+$light-gray-listium:#DEDEDE;
+$dark-gray-listium:#ABABAB;
+
+
+
+
+// COMPONENTS______________________________
+
+// QUARKS
+
+
+.Q_Logo {
+    height: 43px;
+    width: 215px;
+    border-radius: 0px;
+    background-image: url("Q_Logo/Q_Logo_White.svg");
+
+}
+
+
+
+.Q_Numbers {
+  display: flex;
+  .Q_Number {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    padding: 0px;
+
+  }
+  .Q_Number1 {
+    width: 40.2px;
+    height: 67px;
+  }
+  .Q_Number_0 {
+      background-image: url("Q_Number/Number=0.svg");
+      width: 48.25px;
+      height: 67px;
+  }
+
+  .Q_Number_1 {
+      background-image: url("Q_Number/Number=1.svg");
+      width: 45.2px;
+      height: 67px;
+  }
+
+  .Q_Number_2 {
+      background-image: url("Q_Number/Number=2.svg");
+      width: 48.06px;
+      height: 67px;
+  }
+
+  .Q_Number_3 {
+      background-image: url("Q_Number/Number=3.svg");
+      width: 46.4px;
+      height: 67px;
+  }
+
+  .Q_Number_4 {
+      background-image: url("Q_Number/Number=4.svg");
+      width: 52.64px;
+      height: 67px;
+  }
+
+  .Q_Number_5 {
+      background-image: url("Q_Number/Number=5.svg");
+      width: 46.17px;
+      height: 67px;
+  }
+
+  .Q_Number_6 {
+      background-image: url("Q_Number/Number=6.svg");
+      width: 47.33px;
+      height: 67px;
+  }
+
+  .Q_Number_7 {
+      background-image: url("Q_Number/Number=7.svg");
+      width: 45.94px;
+      height: 67px;
+  }
+
+  .Q_Number_8 {
+      background-image: url("Q_Number/Number=8.svg");
+      width: 48.22px;
+      height: 67px;
+  }
+
+  .Q_Number_9 {
+      background-image: url("Q_Number/Number=9.svg");
+      width: 47.33px;
+      height: 67px;
+  }
+  .Q_Number2 {
+      width: 102px;
+      height: 67px;
+  }
+  .Q_Number2_0 {
+      background-image: url("Q_Number/Number2=0.svg");
+  }
+
+  .Q_Number2_1 {
+      background-image: url("Q_Number/Number2=1.svg");
+  }
+
+  .Q_Number2_2 {
+      background-image: url("Q_Number/Number2=2.svg");
+
+  }
+
+  .Q_Number2_3 {
+      background-image: url("Q_Number/Number2=3.svg");
+  }
+
+  .Q_Number2_4 {
+      background-image: url("Q_Number/Number2=4.svg");
+  }
+
+  .Q_Number2_5 {
+      background-image: url("Q_Number/Number2=5.svg");
+  }
+
+  .Q_Number2_6 {
+      background-image: url("Q_Number/Number2=6.svg");
+  }
+
+  .Q_Number2_7 {
+      background-image: url("Q_Number/Number2=7.svg");
+  }
+
+  .Q_Number2_8 {
+      background-image: url("Q_Number/Number2=8.svg");
+  }
+
+  .Q_Number2_9 {
+      background-image: url("Q_Number/Number2=9.svg");
+  }
+}
+
+
+
+
+
+
+
+
+
+// QUARKS
+
+// ATOMS
+
+.A_Search {
+    input[type="submit"] {
+        display: none;
+    }
+    input[type="search"] {
+    padding: 18px 14px;
+
+    position: static;
+    width: 310px;
+    height: 40px;
+    background: $white-listium;
+    border: 2px solid $black-listium;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 20px 0px;
+
+    color: $dark-gray-listium;
+    @include Text;
+    }
+}
+
+
+.A_Cover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 8px 13px;
+
+  position: relative;
+  width: 172px;
+  height: 392px;
+  border-radius: 5px;
+  .description {
+    position: static;
+    height: 188px;
+    left: 4.65%;
+    right: 7.56%;
+    top: calc(50% - 188px/2 + 95px);
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: flex-end;
+    color: $black-listium;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 134px 0px;
+  }
+}
+
+// ATOMS
+
+// MOLECULES
+
+.posts_container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+.M_Post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  .info {
+    .datas {
+      .title {
+        @include H3;
+        position: static;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 42.28%;
+        /* identical to box height, or 122% */
+
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.02em;
+
+        /* black_listium */
+
+        color: $black-listium;
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 13px 0 3px;
+
+        max-width: 172px;
+      }
+      .tracks {
+        @include Secondary_text;
+        color: $dark-gray-listium;
+      }
+    }
+    .tags {
+        display: flex;
+        flex-grow: 1;
+        padding-top: 3px;
+        div {
+            background-color: $light-gray-listium;
+            display: flex;
+            height: 22px;
+            @include Tags;
+            color: $black-listium;
+            padding: 0px 8px;
+            align-items: center;
+            border-radius: 13px;
+            margin-right: 5px;
+        }
+        div:hover {
+            background-color: $blue-listium;
+        }
+    }
+  }
+}
+
+// MOLECULES
+
+
+// ORGANISMS
+
+.O_Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background-color: $black-listium;
+    padding-left: 50px;
+    padding-right: 50px;
+    .icons a{
+        margin-left: 50px;
+    }
+}
+
+// ORGANISMS
+
+// COMPONENTS ________________________________
+
 .top_menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 70px;
-  border-bottom: 1px solid #ddd;
+  height: 75px;
   .top-menu-links {
       display: flex;
       height: 100%;
@@ -412,23 +793,23 @@ form, .new-user {
                     font-weight: 600;
                 }
             }
-            .tags {
-                display: flex;
-                flex-grow: 1;
-                padding-top: 3px;
-                div {
-                    background-color: #E5E5E5;
-                    display: flex;
-                    font-size: 12px;
-                    height: 22px;
-                    color: black;
-                    padding: 0px 8px;
-                    align-items: center;
-                    font-family: 'Golos';
-                    border-radius: 13px;
-                    margin-right: 5px;
-                }
-            }
+            // .tags {
+            //     display: flex;
+            //     flex-grow: 1;
+            //     padding-top: 3px;
+            //     div {
+            //         background-color: #E5E5E5;
+            //         display: flex;
+            //         font-size: 12px;
+            //         height: 22px;
+            //         color: black;
+            //         padding: 0px 8px;
+            //         align-items: center;
+            //         font-family: 'Golos';
+            //         border-radius: 13px;
+            //         margin-right: 5px;
+            //     }
+            // }
             .name {
                 display: flex;
                 margin-bottom: 5px;
