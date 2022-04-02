@@ -1,61 +1,29 @@
-<div class="account stretch">
+<div class="account-container">
+  <% if @user.isblocked == false %>
+  <div class="user-info">
+    <%= react_component 'M_UserInfo', {
+      user: @user,
+      followees:  @user.followees.count,
+      followers: @user.followers.count
+    }%>
 
-<% if @user.isblocked == false %>
-
-    <div class="info">
-        <div class="avatar">
-            <% image_tag("") %>
+    <% if user_signed_in? && current_user.isadmin == true%>
+        <div class="admin-btn">
+            <%= link_to "Панель управления", admin_path %>
         </div>
-        <div class="user-info">
-            <span class="user-title">@<%= @user.username %></span>
-            <p>Email: <%= @user.email %></p>
-            <p>
-                <span>Подписчики <%= @user.followers.count%></span>
-                <span>Подписки <%= link_to @user.followees.count, following_path %></span>
-            </p>
-            <% if user_signed_in? && current_user.isadmin == true %>
-              <% if @user.isadmin == true %>
-                <p><span>Администратор</span></p>
-              <% end %>
-            <% end %>
-            <% if user_signed_in? && current_user.isadmin == true%>
-                <div class="admin-btn">
-                    <%= link_to "Панель управления", admin_path %>
-                </div>
-            <% end %>
-            <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    <% end %>
 
-            <% if (user_signed_in? && @user.id == current_user.id)  %>
-                <div class="btn">
-                    <%= link_to 'Редактировать', edit_user_registration_path %>
-                </div>
-
-            <% elsif user_signed_in? && current_user.followees.include?(@user) %>
-                <h5><%= button_to "Отписаться", unfollow_user_path, method: "POST" %></h5>
-            <% elsif user_signed_in? %>
-                <h5><%= button_to "Подписаться", follow_user_path, method: "POST"  %></h5>
-            <% else %>
-            <%# можно добавить кнопку для регистрации или что-нибудь ещё  %>
-            <% end%>
-
-            <% if user_signed_in? && current_user.isadmin == true && current_user.id != @user.id %>
-                <div class='btn'>
-                    <%= link_to 'Редактировать', edit_user_path(@user)%>
-                </div>
-            <% end %>
-            <p>In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%></p>
-            <% @posts.each do |post| %>
-              <p><span><%= link_to post.title, post %></span></p>
-            <% end %>
-        </div>
-    </div>
-    <div class="posts-container">
-
-    </div>
-
-<% else %>
-<p style='margin: 0 auto;'>Пользователь заблокирован</p>
-<% end %>
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
 
 
+
+  </div>
+  <div class="user-posts">
+    <% @posts.each do |post| %>
+      <%= react_component 'M_Post', { title: post.title, post: post}%>
+    <% end %>
+  </div>
+  <% else %>
+  <p style='margin: 0 auto;'>Пользователь заблокирован</p>
+  <% end %>
 </div>

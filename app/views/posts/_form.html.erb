@@ -1,94 +1,40 @@
-
-
-
-
-<h2>Плейлист</h2>
-
-
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<% if post.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div class="show-main-screen ">
-      <div class="pic"></div>
-      <div class="post-description">
-          <div class="title">
-              <h2 id='special-title'>Название плейлиста</h2>
-              <%= form.text_field :title %>
-          </div>
-          <div class="tags">
-              <div>Грустные</div>
-              <div>ВШЭ</div>
-          </div>
-      </div>
+    <ul>
+      <% post.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
   </div>
+<% end %>
+<div class="form-container">
+  <div class="left-panel">
 
-
-
-  <div class="show-description">
-      <div class="author-block">
-          <h2>Автор</h2>
-          <div class="name">
-              <div></div>
-              <%= form.text_field :name, required: true, class: 'form-control', value:current_user.username  %>
-          </div>
-          <div class="field">
-                <%= form.label :category_id %>
-                <%= form.select :category_id, Category.pluck(:name, :id) %>
-            </div>
-      </div>
-      <div class="description-block">
-          <div class="field">
-            <%= form.label :content %>
-            <%= form.cktext_area :content %>
-          </div>
-      </div>
-      <div class="mood">
-          <h2>Настроение</h2>
-          <div class="tags">
-              <div style='background-color: #B8D0FF'>Грустные</div>
-              <div style='background-color: #FADBE0'>ВШЭ</div>
-              <div style='background-color: #DCF580'>Для сессии</div>
-          </div>
-      </div>
-      <div class="mood">
-          <h2>Праздники</h2>
-          <div class="tags">
-              <div style='background-color: #A480FE'>Новый год</div>
-              <div style='background-color: #FADBE0'>День рождения</div>
-          </div>
-      </div>
-      <div class="mood">
-          <h2>Настроение</h2>
-          <div class="tags">
-              <div style='background-color: #DCF580'>Грустные</div>
-              <div style='background-color: #B8D0FF'>ВШЭ</div>
-          </div>
-      </div>
-      <div class="mood">
-          <h2>Исполнители</h2>
-          <div class="tags">
-              <div style='background-color: #FADBE0'>The Maneskin</div>
-              <div style='background-color: #FADBE0'>Babymetal</div>
-          </div>
-      </div>
-
-      <div class="link-block">
-          <h2>Ссылка на плейлист</h2>
-          <p><%= form.text_field :link %></p>
-      </div>
-      <div class="actions">
-        <%= form.submit "Сохранить" %>
-      </div>
+    <%= react_component 'A_AddCover'%>
+    <p>*Обложка должна быть вертикального формата,не менее 180 × 400 px</p>
   </div>
+  <div class="right-panel">
+    <h3>Создание/Редактирование плейлиста</h3>
+    <label class='form-label'>Название</label>
+    <%= form.text_field :title %>
+
+    <label class='form-label'>Автор</label>
+    <%= form.text_field :name, required: true, value:current_user.username,disabled: true %>
+
+    <label class='form-label'>Описание</label>
+    <%= form.cktext_area :content %>
+
+    <label class='form-label'>Категория</label>
+    <%= form.select :category_id, Category.pluck(:name, :id) %>
+
+    <label class='form-label'>Ссылка на плейлист</label>
+    <%= form.text_field :link %>
+
+    <%= form.submit "Сохранить" %>
+  </div>
+</div>
+
 <% end %>

@@ -106,6 +106,22 @@ html, body {
     letter-spacing: 0em;
 }
 
+h2 {
+  font-family: Golos;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-family: Golos;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
 
 
 $dark-color: #1C1C1C;
@@ -271,7 +287,85 @@ $dark-gray-listium:#ABABAB;
   }
 }
 
+.Q_CoverMain {
+  height: 700px;
+  background-image: url("Q_CoverMain.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #111111;
+  box-sizing: border-box;
+  padding: 150px 50px;
+  .Q_CoverMain_title{
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 105%;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: $white-listium;
+    max-width: 565px;
+  }
+  .Q_CoverMain_description{
+    margin-top: 20px;
+    font-family: 'Golos';
+    font-style: normal;
+    color: $white-listium;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 105%;
+    letter-spacing: -0.04em;
+    max-width: 505px;
+  }
+  .Q_CoverMain_bnts {
+    display: flex;
+    .Q_CoverMain_More {
+      display: flex;
+      margin-right:20px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      box-sizing: border-box;
+      width: 171px;
+      height: 44px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: #1C1C1C;
+    }
+    .Q_CoverMain_Reg {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      box-sizing: border-box;
+      border: 2px solid #FFFFFF;
+      width: 171px;
+      height: 44px;
+      border-radius: 8px;
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+  }
 
+}
+
+.Q_ProfilePic {
+  width: 274px;
+  height: 274px;
+  background-color: $pink-listium;
+  border-radius: 40px;
+}
 
 // QUARKS
 
@@ -361,6 +455,41 @@ $dark-gray-listium:#ABABAB;
   padding: 5px 10px;
 }
 
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 750px;
+  .left-panel {
+
+    p {
+      @include Secondary_text;
+      color: $dark-gray-listium;
+      margin: 0;
+      width: 190px;
+    }
+  }
+  .right-panel {
+    width: 534px;
+  }
+}
+
+.A_AddCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px 13px;
+  margin-bottom: 8px;
+
+  position: relative;
+  width: 172px;
+  height: 392px;
+  border-radius: 5px;
+  border: 1px solid $light-gray-listium;
+  color: $dark-gray-listium;
+  background-color: $background-gray-listium;
+}
 
 .A_Cover {
   display: flex;
@@ -397,6 +526,9 @@ $dark-gray-listium:#ABABAB;
 
 // MOLECULES
 
+
+
+
 .posts_container {
   margin-top: 50px;
   display: flex;
@@ -404,7 +536,48 @@ $dark-gray-listium:#ABABAB;
   box-sizing: border-box;
   justify-content: space-between;
   padding: 0px 50px;
+
 }
+
+.M_UserInfo {
+  display: flex;
+  width: 363px;
+  flex-direction: column;
+  p {
+    max-width: 340px;
+  }
+  .name {
+    margin-top: 10px;
+    width: 363px;
+    font-family: 'Golos';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: #1C1C1C;
+  }
+  .username {
+    margin-top: 4px;
+    @include H3;
+    color: $dark-gray-listium;
+  }
+  .stats {
+    display: flex;
+    margin-top: 8px;
+    div {
+      margin-right: 7px;
+      .num {
+        @include H3;
+      }
+      .cap {
+        @include Secondary_text;
+        color: $dark-gray-listium;
+      }
+    }
+  }
+}
+
 
 .M_Post {
   display: flex;
@@ -475,7 +648,11 @@ $dark-gray-listium:#ABABAB;
   box-sizing: border-box;
   padding: 0px 50px;
   width: 938px;
+}
 
+#cke_post_content {
+    width: 550px;
+    margin-bottom: 15px;
 }
 
 .O_PostInfo {
@@ -543,6 +720,22 @@ $dark-gray-listium:#ABABAB;
 // ORGANISMS
 
 // COMPONENTS ________________________________
+
+.account-container {
+  margin-top: 50px;
+  box-sizing: border-box;
+  padding: 0px 50px 50px;
+  display: flex;
+  .user-posts {
+    display: flex;
+    div {
+      margin-right: 10px;
+    }
+  }
+  .user-info {
+
+  }
+}
 
 .top_menu {
   display: flex;
@@ -767,16 +960,25 @@ footer {
 }
 
 input[type="submit"] {
-    display: inline-block;
-    padding: 5px 15px;
-    color: $dark-blue;
-    font-family: "Golos-medium";
-    font-size: 16px;
-    margin-bottom: 10px;
-    background: $white-listium;
-    border: 2px solid $black_listium;
-    box-sizing: border-box;
-    border-radius: 8px;
+
+/* Auto layout */
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 16px;
+      border: none;
+
+      width: 171px;
+      height: 44px;
+      /* black_listium */
+
+      background: #1C1C1C;
+      border-radius: 8px;
+      color: $white-listium;
+      @include Text;
+
 }
 
 .btn {
@@ -795,21 +997,82 @@ input[type="submit"] {
     }
 }
 
-form, .new-user {
-    max-width: 400px;
-    .field {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-        input[type="text"] {
-            display: block;
-            font-family: "Golos";
-            font-size: 14px;
-        }
-        label {
-            margin-bottom: 10px;
-        }
-    }
+
+.form-label {
+  @include Secondary_text;
+}
+input[type="text"] {
+  /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 12px;
+
+    position: static;
+    width: 554px;
+    height: 52px;
+
+    /* light-sphere */
+
+    background: #FFFFFF;
+    /* black_listium */
+
+    border: 2px solid #1C1C1C;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 6px 0px;
+    margin-bottom: 15px;
+
+    @include Text;
+}
+::placeholder {
+  color: $dark-gray-listium;
+}
+:disabled {
+  border: 2px solid $dark-gray-listium !important;
+  color: $dark-gray-listium;
+}
+
+select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 12px;
+
+  position: static;
+  width: 554px;
+  height: 52px;
+
+  /* light-sphere */
+
+  background: #FFFFFF;
+  /* black_listium */
+
+  border: 2px solid #1C1C1C;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 6px 0px;
+  margin-bottom: 15px;
+
+  @include Text;
+}
+
+#cke_post_content {
+  margin-bottom: 15px;
 }
 
 .alone-form {
@@ -1040,10 +1303,11 @@ form, .new-user {
 }
 
 h2 {
-    font-size: 30px;
-    font-family: "Golos";
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-family: Golos;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.02em;
 }
 
 .main {
