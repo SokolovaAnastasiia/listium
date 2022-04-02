@@ -5,7 +5,7 @@ class A_Cover extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        tracks : props.tracks,
+        tracks : props.tracks ? props.tracks : '00',
         background : props.color ? props.color : '#EBC068',
         description : props.description ? props.description : 'Вам точно понравится этот плейлист'
       };

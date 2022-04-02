@@ -5,12 +5,13 @@ class A_Tag extends React.Component {
       super(props);
       this.state = {
         tag : props.tag ? props.tag : 'Вечеринка',
+        size : props.size ? props.size : '',
       };
-
   }
   render () {
+    
     return (
-      <div>{this.state.tag}</div>
+      <div className={`A_Tag ${this.state.size}`}>{this.state.tag}</div>
     );
   }
 }

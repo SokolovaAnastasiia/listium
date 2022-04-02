@@ -150,7 +150,6 @@ $dark-gray-listium:#ABABAB;
 }
 
 
-
 .Q_Numbers {
   display: flex;
   .Q_Number {
@@ -274,15 +273,34 @@ $dark-gray-listium:#ABABAB;
 
 
 
-
-
-
-
-
-
 // QUARKS
 
 // ATOMS
+
+.A_Author {
+  display: flex;
+  .userPic {
+    width: 52px;
+    height: 52px;
+    background-color: $pink-listium;
+    border-radius: 100px;
+    margin-right: 10px;
+  }
+  .user_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .name {
+      color: $black-listium;
+      display: flex;
+    }
+    .nickname {
+      color: $dark-gray-listium;
+      display: flex;
+    }
+  }
+}
+
 
 .A_Search {
     input[type="submit"] {
@@ -309,6 +327,38 @@ $dark-gray-listium:#ABABAB;
     color: $dark-gray-listium;
     @include Text;
     }
+}
+
+.A_Tags {
+    display: flex;
+    flex-grow: 1;
+    padding-top: 3px;
+
+}
+
+.A_Tag {
+    background-color: $light-gray-listium;
+    display: flex;
+    height: 22px;
+    @include Tags;
+    color: $black-listium;
+    padding: 0px 8px;
+    align-items: center;
+    border-radius: 13px;
+    margin-right: 5px;
+    width: fit-content;
+}
+.A_Tag:hover {
+    background-color: $blue-listium;
+}
+
+.A_Tag_Big {
+  background-color: $white-listium;
+  height: 26px;
+  border: 1.5px solid $black-listium;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 5px 10px;
 }
 
 
@@ -361,6 +411,10 @@ $dark-gray-listium:#ABABAB;
   flex-direction: column;
   margin-bottom: 30px;
   .info {
+    .tags {
+      display: flex;
+      margin-top: 4px;
+    }
     .datas {
       .title {
         @include H3;
@@ -394,25 +448,6 @@ $dark-gray-listium:#ABABAB;
         color: $dark-gray-listium;
       }
     }
-    .tags {
-        display: flex;
-        flex-grow: 1;
-        padding-top: 3px;
-        div {
-            background-color: $light-gray-listium;
-            display: flex;
-            height: 22px;
-            @include Tags;
-            color: $black-listium;
-            padding: 0px 8px;
-            align-items: center;
-            border-radius: 13px;
-            margin-right: 5px;
-        }
-        div:hover {
-            background-color: $blue-listium;
-        }
-    }
   }
 }
 
@@ -432,6 +467,77 @@ $dark-gray-listium:#ABABAB;
     .icons a{
         margin-left: 50px;
     }
+}
+
+.post-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  box-sizing: border-box;
+  padding: 0px 50px;
+  width: 938px;
+
+}
+
+.O_PostInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 953px;
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 555px;
+    height: 100%;
+    .title {
+      @include H2;
+      margin-bottom: 16px;
+    }
+    .tags {
+        display: flex;
+        margin-bottom: 30px;
+    }
+    .description {
+      display: flex;
+      flex-direction: column;
+      .title {
+        margin-bottom: 10px;
+        @include H3;
+      }
+      .text {
+        @include Text;
+        p {
+          margin: 0;
+        }
+      }
+    }
+    .reaction {
+      display: flex;
+      align-items: flex-end;
+      margin-top: 30px;
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+  .sideInfo {
+    position: relative;
+    top: 10px;
+    display: flex;
+    width: 172px;
+    .author {
+
+    }
+  }
+
+}
+
+
+.field .form-control{
+  display: none;
+}
+
+#content {
+  display: none;
 }
 
 // ORGANISMS
@@ -662,27 +768,30 @@ footer {
 
 input[type="submit"] {
     display: inline-block;
-    background-color: $light-blue;
-    border-radius: 38px;
     padding: 5px 15px;
-    border: none;
     color: $dark-blue;
     font-family: "Golos-medium";
     font-size: 16px;
     margin-bottom: 10px;
+    background: $white-listium;
+    border: 2px solid $black_listium;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 .btn {
     display: inline-block;
-    background-color: $light-blue;
-    border-radius: 38px;
     padding: 5px 15px;
-    border: none;
+    color: $dark-blue;
+    font-family: "Golos-medium";
+    font-size: 16px;
     margin-bottom: 10px;
+    background: $white-listium;
+    border: 2px solid $black_listium;
+    box-sizing: border-box;
+    border-radius: 8px;
     a {
-        color: $dark-blue;
-        font-family: "Golos-medium";
-        font-size: 16px;
+        color: $black-listium;
     }
 }
 
@@ -895,23 +1004,23 @@ form, .new-user {
             color: black;
         }
     }
-    .tags {
-        display: flex;
-        flex-grow: 1;
-        padding-top: 3px;
-        div {
-            background-color: #E5E5E5;
-            display: flex;
-            font-size: 12px;
-            height: 22px;
-            color: black;
-            padding: 0px 8px;
-            align-items: center;
-            font-family: 'Golos';
-            border-radius: 13px;
-            margin-right: 5px;
-        }
-    }
+    // .tags {
+    //     display: flex;
+    //     flex-grow: 1;
+    //     padding-top: 3px;
+    //     div {
+    //         background-color: #E5E5E5;
+    //         display: flex;
+    //         font-size: 12px;
+    //         height: 22px;
+    //         color: black;
+    //         padding: 0px 8px;
+    //         align-items: center;
+    //         font-family: 'Golos';
+    //         border-radius: 13px;
+    //         margin-right: 5px;
+    //     }
+    // }
     .name {
         display: flex;
         margin-bottom: 5px;
@@ -1010,23 +1119,23 @@ h2 {
     }
 }
 
-.tags {
-    display: flex;
-    flex-grow: 1;
-    padding-top: 3px;
-    div {
-        background-color: #E5E5E5;
-        display: flex;
-        font-size: 12px;
-        height: 22px;
-        color: black;
-        padding: 0px 8px;
-        align-items: center;
-        font-family: 'Golos';
-        border-radius: 13px;
-        margin-right: 5px;
-    }
-}
+// .tags {
+//     display: flex;
+//     flex-grow: 1;
+//     padding-top: 3px;
+//     div {
+//         background-color: #E5E5E5;
+//         display: flex;
+//         font-size: 12px;
+//         height: 22px;
+//         color: black;
+//         padding: 0px 8px;
+//         align-items: center;
+//         font-family: 'Golos';
+//         border-radius: 13px;
+//         margin-right: 5px;
+//     }
+// }
 
 .show-main-screen {
     display: flex;
@@ -1216,12 +1325,17 @@ h2 {
 }
 
 .actions input{
-    width: 166px;
-    height: 40px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+    color: $black-listium;
+    @include Text;
+    font-family: "Golos-medium";
+    font-size: 16px;
+    margin-bottom: 10px;
+    background: $white-listium;
+    border: 2px solid $black_listium;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
 
 #special-title {

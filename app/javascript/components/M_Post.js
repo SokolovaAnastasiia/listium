@@ -29,7 +29,7 @@ class M_Post extends React.Component {
     tracks = randomIntFromInterval(0, 99)
     return (
       <div className='M_Post'>
-        <a href='#'>
+        <a href={`/posts/${this.props.post.id}`}>
         <A_Cover tracks={tracks.toString()} />
         </a>
         <div className='info'>

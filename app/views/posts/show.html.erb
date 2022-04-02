@@ -1,77 +1,21 @@
+<div class="post-container">
+    <%= react_component 'O_PostInfo', { title: @post.title, description: @post.content.html_safe, author: User.find(@post.user_id).id, authordata: User.find(@post.user_id)}%>
 
+    <% if (user_signed_in? && current_user.isadmin == true)%>
+        <%= link_to 'Редактировать',  edit_post_path(@post) %>
+        <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' }%>
+    <% end %>
 
+    <%= form_tag :qr_code_download, method: :get do |f| %>
+      <div class="field">
+        <%= text_field_tag :content, nil, required: true, class: 'form-control', value:@post %>
+      </div>
 
-<div class="show-main-screen ">
-    <div class="pic"></div>
-    <div class="post-description">
-        <div class="title"><%= @post.title %></div>
-        <div class="tags">
-            <div>Грустные</div>
-            <div>ВШЭ</div>
-        </div>
-        <div class="name">
-            <div></div>
-            <span><%= link_to User.find(@post.user_id).username, User.find(@post.user_id) %></span>
-        </div>
-        <% if (user_signed_in? && current_user.isadmin == true)%>
-            <%= link_to '',  edit_post_path(@post), class: 'edit' %>
-            <%= link_to '', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'bin' %>
-        <% end %>
+      <div class="actions">
+        <%= submit_tag 'QR-код' %>
+      </div>
+    <% end %>
 
-
-    </div>
-</div>
-
-<div class="show-description">
-
-
-
-
-
-    <div class="description-block">
-        <p>
-              <strong>Жанр:</strong>
-              <%= @post.category.name %>
-        </p>
-        <p>
-          <strong>Описание:</strong>
-          <%= @post.content.html_safe %>
-        </p>
-    </div>
-    <div class="mood">
-        <h2>Настроение</h2>
-        <div class="tags">
-            <div style='background-color: #B8D0FF'>Грустные</div>
-            <div style='background-color: #FADBE0'>ВШЭ</div>
-            <div style='background-color: #DCF580'>Для сессии</div>
-        </div>
-    </div>
-    <div class="mood">
-        <h2>Праздники</h2>
-        <div class="tags">
-            <div style='background-color: #A480FE'>Новый год</div>
-            <div style='background-color: #FADBE0'>День рождения</div>
-        </div>
-    </div>
-    <div class="mood">
-        <h2>Настроение</h2>
-        <div class="tags">
-            <div style='background-color: #DCF580'>Грустные</div>
-            <div style='background-color: #B8D0FF'>ВШЭ</div>
-        </div>
-    </div>
-    <div class="mood">
-        <h2>Исполнители</h2>
-        <div class="tags">
-            <div style='background-color: #FADBE0'>The Maneskin</div>
-            <div style='background-color: #FADBE0'>Babymetal</div>
-        </div>
-    </div>
-
-    <div class="link-block">
-        <h2>Ссылка на плейлист</h2>
-        <p><%= @post.link %></p>
-    </div>
 
     <h2>Комментарии:</h2>
     <%= render @post.comments %>
@@ -82,6 +26,4 @@
     <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
     <% end %>
 
-
-    <%# render "comments/form" %>
 </div>

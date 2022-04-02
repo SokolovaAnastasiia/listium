@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   get 'admin/index'
   get 'admin', to: 'admin#index'
 
+  controller :pages do
+    get :qr_code_generator
+    get :qr_code_download
+  end
+
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -29,7 +34,7 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
-  
+
   resources :users, only: [:show, :edit, :update]
 
 
