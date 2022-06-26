@@ -1,5 +1,14 @@
+<div class="cover-long" style="background-image: url('<%= image_url @post.image.url %>');">
+
+</div>
+
+
+
 <div class="post-container">
     <%= react_component 'O_PostInfo', { title: @post.title, description: @post.content.html_safe, author: User.find(@post.user_id).id, authordata: User.find(@post.user_id)}%>
+
+
+  
 
     <% if (user_signed_in? && current_user.isadmin == true)%>
         <%= link_to 'Редактировать',  edit_post_path(@post) %>

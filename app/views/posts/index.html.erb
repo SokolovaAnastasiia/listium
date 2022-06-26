@@ -1,6 +1,6 @@
 <%= react_component 'Q_CoverMain'%>
 
-<div class="posts_container">
+<div class="posts_container" style='justify-content: left; gap: 12px;'>
   <% @posts.each do |post| %>
   <%= react_component 'M_Post', { title: post.title, post: post}%>
   <% end %>

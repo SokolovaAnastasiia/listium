@@ -1216,8 +1216,9 @@ select {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-
+    // justify-content: space-between;
+    justify-content: left;
+    gap: 20px;
 }
 
 .bin {
@@ -1634,3 +1635,11 @@ h2 {
  *= require_tree .
  *= require_self
  */
+
+ .cover-long {
+   height: 400px;
+   width: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }

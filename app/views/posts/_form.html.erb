@@ -14,16 +14,22 @@
   <div class="left-panel">
 
     <%= react_component 'A_AddCover'%>
+    <div>
+    	<%= form.label :image %>
+    	<%= form.file_field :image %>
+    </div>
     <p>*Обложка должна быть вертикального формата,не менее 180 × 400 px</p>
   </div>
   <div class="right-panel">
     <h3>Создание/Редактирование плейлиста</h3>
+
+
     <label class='form-label'>Название</label>
     <%= form.text_field :title %>
 
-    <label class='form-label'>Автор</label>
-    <%= form.text_field :name, required: true, value:current_user.username,disabled: true %>
-
+    <label class='form-label' disabled>Автор</label>
+    <%= form.text_field :name, required: true, value:current_user.username %>
+    <%# <%= form.text_field :name %> %>
     <label class='form-label'>Описание</label>
     <%= form.cktext_area :content %>
 

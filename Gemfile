@@ -5,6 +5,8 @@ ruby '2.7.4'
 
 gem 'rqrcode'
 
+gem 'carrierwave', '~> 2.0'
+
 gem 'devise', '~> 4.2'
 
 gem 'ckeditor'
