@@ -16,6 +16,9 @@ class A_Author extends React.Component {
         <div className='user_info'>
           <a className='name'>{this.state.name}</a>
           <a className='nickname'>@{this.state.nickname}</a>
+          <p className='description'>
+            Эксперт по музыкальным направлениям, преподаватель истории музыки НИУ ВШЭ
+          </p>
         </div>
       </div>
     );

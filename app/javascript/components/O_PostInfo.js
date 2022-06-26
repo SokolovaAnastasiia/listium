@@ -21,27 +21,10 @@ class O_PostInfo extends React.Component {
   render () {
     return (
       <div className='O_PostInfo'>
-        <A_Cover/>
-        <div className='info'>
-          <span className='title'>{this.state.title}</span>
-          <div className='tags'>
-            <A_Tag tag={this.state.tags[0]} size='A_Tag_Big'/>
-            <A_Tag tag={this.state.tags[1]} size='A_Tag_Big'/>
-          </div>
-          <div className='description'>
-            <span className='title'>Описание</span>
-            <div className='text' dangerouslySetInnerHTML={{__html: this.state.description}}></div>
-          </div>
-          <div className='reaction'>
-            <Q_Like />
-            <Q_Bookmark />
-            <Q_Share />
-          </div>
-        </div>
         <div className='sideInfo'>
           <a href={`/users/${this.state.author}`}>
           <A_Author nickname={this.state.nickname}/>
-          
+
           </a>
         </div>
       </div>

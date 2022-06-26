@@ -9,6 +9,8 @@ class M_Post extends React.Component {
         title : props.title ? props.title : 'Тебе для хорошего настроения',
         tracks : props.tracks ? props.tracks : parseInt('00',8),
         tags : props.tags ? props.tags : ['LoFi', 'Вечеринка'],
+        description : props.description ?  props.description : 'Плейлист шикарный',
+        image : props.image ? props.image : 'link'
       };
 
   }

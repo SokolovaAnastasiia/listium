@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Q_Like_Solid from '../../assets/images/icons/Q_Like_Solid.svg'
+import Q_Like_Solid from '../../assets/images/icons/Q_Like_Solid_white.svg'
 import Q_Like_Empty from '../../assets/images/icons/Q_Like_Empty.svg'
+// import Q_Like_Solid from '../../assets/images/icons/Q_Like_Solid.svg'
+// import Q_Like_Empty from '../../assets/images/icons/Q_Like_Empty.svg'
 
 class Q_Like extends React.Component {
   constructor(props) {

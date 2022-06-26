@@ -17,11 +17,31 @@
 
 
 
+
   </div>
   <div class="user-posts">
     <% @posts.each do |post| %>
       <%= react_component 'M_Post', { title: post.title, post: post}%>
     <% end %>
+    <div class='M_Post'>
+      <a href="#">
+      <%= react_component 'A_Cover', { tracks: "14"}%>
+      </a>
+      <div class='info'>
+        <div class='datas'>
+          <a href={`/posts/${this.props.post.id}`} class='title'>
+            Плейлист для спорта
+          </a>
+          <span class='tracks'>
+            14 треков
+          </span>
+        </div>
+        <div class='tags'>
+        <A_Tag tag={this.state.tags[0]} />
+        <A_Tag tag={this.state.tags[1]} />
+        </div>
+      </div>
+    </div>
   </div>
   <% else %>
   <p style='margin: 0 auto;'>Пользователь заблокирован</p>

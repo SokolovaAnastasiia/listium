@@ -373,9 +373,10 @@ $dark-gray-listium:#ABABAB;
 
 .A_Author {
   display: flex;
+  flex-direction: column;
   .userPic {
-    width: 52px;
-    height: 52px;
+    width: 110px;
+    height: 110px;
     background-color: $pink-listium;
     border-radius: 100px;
     margin-right: 10px;
@@ -383,14 +384,36 @@ $dark-gray-listium:#ABABAB;
   .user_info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     .name {
+      margin-top: 1em;
       color: $black-listium;
       display: flex;
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.02em;
     }
     .nickname {
-      color: $dark-gray-listium;
       display: flex;
+      color: #FABBC1;
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: -0.02em;
+    }
+    .description {
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: -0.02em;
+      color: #ABABAB;
     }
   }
 }
@@ -453,6 +476,12 @@ $dark-gray-listium:#ABABAB;
   box-sizing: border-box;
   border-radius: 15px;
   padding: 5px 10px;
+}
+
+.A_Tag_Cover {
+  background-color: rgba(76, 175, 80, 0);
+  border: 1.5px solid #FFFFFF;
+  color: white;
 }
 
 .form-container {
@@ -647,7 +676,7 @@ $dark-gray-listium:#ABABAB;
   margin-top: 50px;
   box-sizing: border-box;
   padding: 0px 50px;
-  width: 938px;
+  width: 100%;
 }
 
 #cke_post_content {
@@ -659,7 +688,6 @@ $dark-gray-listium:#ABABAB;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 953px;
   .info {
     display: flex;
     flex-direction: column;
@@ -1039,6 +1067,86 @@ input[type="text"] {
   border: 2px solid $dark-gray-listium !important;
   color: $dark-gray-listium;
 }
+
+input[type="email"] {
+  /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 12px;
+
+    position: static;
+    width: 554px;
+    height: 52px;
+
+    /* light-sphere */
+
+    background: #FFFFFF;
+    /* black_listium */
+
+    border: 2px solid #1C1C1C;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 6px 0px;
+    margin-bottom: 15px;
+
+    @include Text;
+}
+::placeholder {
+  color: $dark-gray-listium;
+}
+:disabled {
+  border: 2px solid $dark-gray-listium !important;
+  color: $dark-gray-listium;
+}
+
+
+input[type="password"] {
+  /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 12px;
+
+    position: static;
+    width: 554px;
+    height: 52px;
+
+    /* light-sphere */
+
+    background: #FFFFFF;
+    /* black_listium */
+
+    border: 2px solid #1C1C1C;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 6px 0px;
+    margin-bottom: 15px;
+
+    @include Text;
+}
+::placeholder {
+  color: $dark-gray-listium;
+}
+:disabled {
+  border: 2px solid $dark-gray-listium !important;
+  color: $dark-gray-listium;
+}
+
 
 select {
   display: flex;
@@ -1637,9 +1745,181 @@ h2 {
  */
 
  .cover-long {
+   z-index: 1;
+   position: relative;
    height: 400px;
    width: 100%;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   .cover-black {
+     z-index: -2;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     right: 0;
+     left: 0;
+     background: linear-gradient(90deg, rgba(28, 28, 28, 0.9) 31.37%, rgba(28, 28, 28, 0) 70.82%);
+   }
+   .cover-info {
+     padding-left: 3em;
+     position: absolute;
+     bottom: 0;
+     color: white;
+      h2 {
+        font-family: 'Golos';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 40px;
+        letter-spacing: -0.02em;
+        margin-bottom: 0em;
+      }
+      p {
+        width: 604px;
+        font-family: 'Golos';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      .info {
+        display: flex;
+        margin-bottom: 3em;
+        justify-content: space-between;
+        .tags {
+          display: flex;
+        }
+        .deals {
+          .reaction {
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+
+   }
  }
+
+.post-wrapper {
+  display: flex;
+  .tracks {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3em;
+    span {
+      font-family: 'Golos';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: -0.02em;
+      margin-bottom: 1em;
+    }
+    .columns {
+      display: flex;
+      .column {
+        flex-grow: 1;
+        width: 250px;
+
+        .track {
+          margin-top: 15px;
+          display: flex;
+          gap: 20px;
+          .number {
+            font-family: 'Golos';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: -0.02em;
+            color: #FABBC1;
+          }
+          .data {
+            .singer {
+              font-family: 'Golos';
+              font-style: normal;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: -0.02em;
+              color: #1C1C1C;
+            }
+            .song {
+              font-family: 'Golos';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              letter-spacing: -0.02em;
+              color: #1C1C1C;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
+.Q_Link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 20px;
+
+  width: 195px;
+  height: 48px;
+
+  background: #F4F4F4;
+  border-radius: 8px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 7px;
+}
+
+.Q_Link.Q_Spotify {
+  background-image: url('icons/logo-spotify.png');
+}
+
+.Q_Link.Q_Boom {
+  background-image: url('icons/logo-boom.png');
+}
+
+.Q_Link.Q_Yandex {
+  background-image: url('icons/logo-yandex.png');
+}
+
+.Q_Link.Q_Sber{
+  background-image: url('icons/logo-sber.png');
+}
+
+
+.login{
+  margin: 0 auto;
+  height: 738px;
+  input {
+    margin-bottom: 20px;
+  }
+}
+.sign {
+  margin: 0 auto;
+  height: 730px;
+
+  input {
+    width: 350px !important;
+    margin-bottom: 20px;
+    height: 37px;
+  }
+  #user_username {
+    // width: 177px !important;
+  }
+}
+
+#send-btn {
+  height: 41px !important;
+}

@@ -1,38 +1,95 @@
 <div class="cover-long" style="background-image: url('<%= image_url @post.image.url %>');">
+  <div class="cover-black"></div>
+  <div class="cover-info">
+    <h2> <%= @post.title %> </h2>
+    <p>
+      <%= @post.content.html_safe %>
+    </p>
+    <div class="info">
+      <div class="tags">
+        <%= react_component 'A_Tag', { tag: 'Дорога' , size: 'A_Tag_Cover' } %>
+        <%= react_component 'A_Tag', { tag: 'Друзья' , size: 'A_Tag_Cover' } %>
+        <%= react_component 'A_Tag', { tag: 'Радость' , size: 'A_Tag_Cover' } %>
+        <%= react_component 'A_Tag', { tag: 'Путешествия' , size: 'A_Tag_Cover' } %>
+      </div>
+      <div class="deals">
+        <div class='reaction'>
+          <%= react_component 'Q_Like', {} %>
+          <div class="number">0</div>
+          <%= react_component 'Q_Bookmark', {} %>
+          <%= react_component 'Q_Share', {} %>
+        </div>
+      </div>
+    </div>
 
+  </div>
 </div>
 
 
 
+
 <div class="post-container">
+
+  <div class="post-wrapper">
     <%= react_component 'O_PostInfo', { title: @post.title, description: @post.content.html_safe, author: User.find(@post.user_id).id, authordata: User.find(@post.user_id)}%>
+    <div class="tracks">
+      <span>Треки</span>
+      <div class="columns">
+        <div class="column">
+
+          <%= react_component 'A_Track', { number: '01', singer: 'Lana Del Rey', song: 'Summertime sadness'}%>
+          <%= react_component 'A_Track', { number: '02', singer: 'FACE', song: 'Из окна'}%>
+          <%= react_component 'A_Track', { number: '03', singer: 'Cardi B', song: 'Up'}%>
+          <%= react_component 'A_Track', { number: '04', singer: 'Электрофорез', song: 'Русская принцесса'}%>
+        </div>
+        <div class="column">
+          <%= react_component 'A_Track', { number: '05', singer: 'The neighbourhood', song: 'Daddy issues'}%>
+          <%= react_component 'A_Track', { number: '06', singer: 'ЛСП', song: 'Парень с блока'}%>
+          <%= react_component 'A_Track', { number: '07', singer: 'FACE', song: 'Из окна'}%>
+          <%= react_component 'A_Track', { number: '08', singer: 'Электрофорез', song: 'Русская принцесса'}%>
+        </div>
+
+        <div class="column">
+          <%= react_component 'A_Track', { number: '09', singer: 'ЛСП', song: 'Парень с блока'}%>
+          <%= react_component 'A_Track', { number: '10', singer: 'The neighbourhood', song: 'Daddy issues'}%>
+          <%= react_component 'A_Track', { number: '11', singer: 'Cardi B', song: 'Up'}%>
+          <%= react_component 'A_Track', { number: '12', singer: 'ЛСП', song: 'Парень с блока'}%>
+        </div>
+
+        <div class="column">
+          <%= react_component 'A_Track', { number: '13', singer: 'The neighbourhood', song: 'Daddy issues'}%>
+          <%= react_component 'A_Track', { number: '14', singer: 'ЛСП', song: 'Парень с блока'}%>
+        </div>
+      </div>
 
 
-  
+    </div>
+    <div class="links">
+      <%= react_component 'Q_Link', { service: 'boom', link: @post.link.html_safe} %>
+      <%= react_component 'Q_Link', { service: 'spotify', link: @post.link.html_safe}%>
+      <%= react_component 'Q_Link', { service: 'yandex', link: @post.link.html_safe}%>
+      <%= react_component 'Q_Link', { service: 'sber', link: @post.link.html_safe}%>
+    </div>
+  </div>
+
 
     <% if (user_signed_in? && current_user.isadmin == true)%>
         <%= link_to 'Редактировать',  edit_post_path(@post) %>
         <%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' }%>
     <% end %>
 
-    <%= form_tag :qr_code_download, method: :get do |f| %>
-      <div class="field">
-        <%= text_field_tag :content, nil, required: true, class: 'form-control', value:@post %>
-      </div>
-
-      <div class="actions">
-        <%= submit_tag 'QR-код' %>
-      </div>
-    <% end %>
 
 
-    <h2>Комментарии:</h2>
-    <%= render @post.comments %>
+<div class="comments" style='width: 600px;'>
+  <h2>Комментарии:</h2>
+  <%= render @post.comments %>
 
-    <% if user_signed_in? %>
-    <%= render "comments/form" %>
-    <% else %>
-    <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-    <% end %>
+  <% if user_signed_in? %>
+  <%= render "comments/form" %>
+  <% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+  <% end %>
+</div>
+
 
 </div>
